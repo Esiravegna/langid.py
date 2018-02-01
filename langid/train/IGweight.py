@@ -113,7 +113,7 @@ def pass_IG(buckets):
     # update event matrix
     freq = term_freq[term]
     for event_id, count in freq.iteritems():
-      cm_pos[term_id, event_id] = count
+      cm_pos[term_id, int(event_id)] = count
   cm_neg = __dist - cm_pos
   cm = numpy.dstack((cm_neg, cm_pos))
 
